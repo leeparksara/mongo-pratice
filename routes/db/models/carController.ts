@@ -1,3 +1,5 @@
+
+
 // Import our carmodel that we exported from carSchema.ts file
 // to work with our collection, insert in data and so on
 import CarModel, { carType } from "./carSchema";

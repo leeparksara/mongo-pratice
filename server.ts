@@ -18,17 +18,19 @@ import { connect } from 'mongoose';
 
 // Create a connection to mongodb
 
-connect('mongodb://localhost:27017//saraleepark')
+
+connect('mongodb://127.0.0.1:27017/saral')
+
 
 // use variable app to work with express
 const app = express()
 // decide a port for this app
 const port = 8000
-
 //step 2
 //use middleware
 app.use(json());
 // Use router in the server
+
 app.use('/car', carRouter);
 
 //step 3
@@ -36,7 +38,6 @@ app.get('/', (req: Request, res: Response) => {
 
     res.send("yes this is working")
 })
-
 
 
 //Get cars from the "/car" route
@@ -48,7 +49,7 @@ app.get('/car', async (req: Request, res: Response) => {
 })
 /* This route is listening to a POST request at port 8000 by "/car" endpoint and
 use createCar function to create a new car product with the data that will be sent in the req.body request.
-Make sure to define a function for createCar and import it in the server file */
+Make sure to define a function for createCar and import it in the server file*/
 app.post('/car', async (req:Request, res:Response) => {
     const newCar = req.body
     const createdCar = await createCar(newCar)

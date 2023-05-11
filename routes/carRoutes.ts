@@ -1,3 +1,5 @@
+
+
 // This file handles all our different routes with our cars
 //import express,  because we are going to work with routes that includes in their library
 
@@ -13,16 +15,16 @@ const router = express.Router()
 
 // Create a handle for routes
 
-router.get('/', (req: Request, res: Response) => {
-    res.send('Get cars')
+router.get('/', (req:Request, res:Response) => {
+    res.send('Get Cars')
 })
-
 
 
 // Create a post method to the server
 
-router.post('/car', async (req: Request, res: Response) => {
+router.post('/car', async (req:Request, res:Response) => {
     const createdCar = await createCar(req.body)
     res.status(201).json(createdCar)
- })
-export default router;
+})
+
+export default router
